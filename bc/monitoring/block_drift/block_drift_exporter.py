@@ -24,8 +24,8 @@ CHAIN_CONFIGS = {
         "jsonrpc_body": {"jsonrpc": "2.0", "id": 1, "method": "getBlockHeight"},
     },
     "eth": {
-        "local": "http://127.0.0.1:8547",
-        "remote": "https://rpc.ankr.com/eth",
+        "local": "http://127.0.0.1:8545",
+        "remote": "https://ethereum.llamarpc.com",
         "is_hex": True,
         "jsonrpc_body": {"jsonrpc": "2.0", "id": 1, "method": "eth_blockNumber", "params": []},
     },
@@ -37,7 +37,7 @@ CHAIN_CONFIGS = {
     },
     "base": {
         "local": "http://127.0.0.1:8545",
-        "remote": "https://rpc.ankr.com/base",
+        "remote": "https://mainnet.base.org",
         "is_hex": True,
         "jsonrpc_body": {"jsonrpc": "2.0", "id": 1, "method": "eth_blockNumber", "params": []},
     }
