@@ -18,8 +18,8 @@ else
     exit 1
 fi
 
-pip3 install --upgrade pip
-pip3 install flask requests
+#pip3 install --break-system-packages --upgrade pip
+pip3 install --break-system-packages flask requests
 
 if [ ! -f "${SCRIPT_PATH}" ] ; then
   SCRIPT_PATH=/tmp/block_drift_exporter.py
