@@ -54,7 +54,7 @@ EOF
 CONFIG_FILE="/etc/alloy/config.alloy"
 SCRAPE_SNIPPET="prometheus.scrape \"chain_drift_${CHAIN}\""
 
-if -f "${CONFIG_FILE}" ! grep -q "${SCRAPE_SNIPPET}" "{$CONFIG_FILE}"; then
+if [ -f "${CONFIG_FILE}" ] && ! grep -q "${SCRAPE_SNIPPET}" "{$CONFIG_FILE}"; then
     cat <<EOF >> "$CONFIG_FILE"
 
 $SCRAPE_SNIPPET {
