@@ -52,7 +52,8 @@ After=${SERVICE_NAME}
 EOF
 
 CONFIG_FILE="/etc/alloy/config.alloy"
-SCRAPE_SNIPPET="prometheus.scrape \"chain_drift_${CHAIN}\""
+SCRAPER_NAME="chain_drift_${CHAIN}"
+SCRAPE_SNIPPET="prometheus.scrape \"${SCRAPER_NAME}\""
 
 if [ -f "${CONFIG_FILE}" ] && ! grep -q "${SCRAPE_SNIPPET}" "${CONFIG_FILE}"; then
     cat <<EOF >> "$CONFIG_FILE"
@@ -64,6 +65,14 @@ $SCRAPE_SNIPPET {
       __address__ = "localhost:${PORT}",
     },
   ]
+  relabel {
+    target_label  = "instance"
+    replacement   = constants.hostname
+  }
+  relabel {
+    target_label  = "hostname"
+    replacement   = constants.hostname
+  }
   forward_to = [prometheus.remote_write.default.receiver]
 }
 EOF
