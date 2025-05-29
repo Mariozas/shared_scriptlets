@@ -65,16 +65,26 @@ $SCRAPE_SNIPPET {
       __address__ = "localhost:${PORT}",
     },
   ]
-  relabel {
-    target_label  = "instance"
-    replacement   = constants.hostname
-  }
-  relabel {
-    target_label  = "hostname"
-    replacement   = constants.hostname
-  }
   forward_to = [prometheus.remote_write.default.receiver]
 }
+discovery.relabel "chain_drift_${CHAIN}" {
+  targets = [
+    {
+      __address__ = "localhost:9100",
+      job         = "chain_drift_${CHAIN}",
+    },
+  ]
+    rule {
+        target_label = "instance"
+        replacement  = constants.hostname
+    }
+
+    rule {
+        target_label = "hostname"
+        replacement  = constants.hostname
+    }
+}
+
 EOF
 fi
 
