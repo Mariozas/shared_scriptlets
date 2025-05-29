@@ -11,6 +11,7 @@ SERVICE_NAME="chain_drift_${CHAIN}.service"
 if command -v apt >/dev/null; then
     apt update
     apt install -y python3 python3-pip wget
+    apt install python3-flask python3-requests || true
 elif command -v yum >/dev/null; then
     yum install -y python3 python3-pip wget
 else
