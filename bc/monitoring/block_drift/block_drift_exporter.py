@@ -68,7 +68,7 @@ CHAIN_CONFIGS = {
         "jsonrpc_body": {"jsonrpc": "2.0", "id": 1, "method": "eth_blockNumber", "params": []},
     },
     "avalanchego": {
-        "local": "http://127.0.0.1:8545",
+        "local": "http://127.0.0.1:8545/ext/bc/C/rpc",
         "remote": "https://avalanche.therpc.io",
         "is_hex": True,
         "jsonrpc_body": {"jsonrpc": "2.0", "id": 1, "method": "eth_blockNumber", "params": []},
