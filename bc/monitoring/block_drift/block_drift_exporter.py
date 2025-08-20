@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import argparse
+from random import betavariate
+
 import requests
 import logging
 import json
@@ -38,6 +40,36 @@ CHAIN_CONFIGS = {
     "base": {
         "local": "http://127.0.0.1:8545",
         "remote": "https://mainnet.base.org",
+        "is_hex": True,
+        "jsonrpc_body": {"jsonrpc": "2.0", "id": 1, "method": "eth_blockNumber", "params": []},
+    },
+    "story": {
+        "local": "http://127.0.0.1:8545",
+        "remote": "https://mainnet.storyrpc.io",
+        "is_hex": True,
+        "jsonrpc_body": {"jsonrpc": "2.0", "id": 1, "method": "eth_blockNumber", "params": []},
+    },
+    "pulse": {
+        "local": "http://127.0.0.1:8545",
+        "remote": "https://pulsechain-rpc.publicnode.com",
+        "is_hex": True,
+        "jsonrpc_body": {"jsonrpc": "2.0", "id": 1, "method": "eth_blockNumber", "params": []},
+    },
+    "bera": {
+        "local": "http://127.0.0.1:8545",
+        "remote": "https://berachain-rpc.publicnode.com",
+        "is_hex": True,
+        "jsonrpc_body": {"jsonrpc": "2.0", "id": 1, "method": "eth_blockNumber", "params": []},
+    },
+    "sonic": {
+        "local": "http://127.0.0.1:8545",
+        "remote": "https://rpc.soniclabs.com",
+        "is_hex": True,
+        "jsonrpc_body": {"jsonrpc": "2.0", "id": 1, "method": "eth_blockNumber", "params": []},
+    },
+    "avalanchego": {
+        "local": "http://127.0.0.1:8545",
+        "remote": "https://avalanche.therpc.io",
         "is_hex": True,
         "jsonrpc_body": {"jsonrpc": "2.0", "id": 1, "method": "eth_blockNumber", "params": []},
     }
