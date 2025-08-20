@@ -24,7 +24,7 @@ pip3 install flask requests || pip3 install --break-system-packages flask reques
 
 if [ ! -f "${SCRIPT_PATH}" ] ; then
   SCRIPT_PATH=/tmp/block_drift_exporter.py
-  wget https://raw.githubusercontent.com/dit-darius/shared_scriptlets/refs/heads/main/bc/monitoring/block_drift/block_drift_exporter.py -O "${SCRIPT_PATH}"
+  wget https://raw.githubusercontent.com/Mariozas/shared_scriptlets/refs/heads/main/bc/monitoring/block_drift/block_drift_exporter.py -O "${SCRIPT_PATH}"
 fi
 cp "${SCRIPT_PATH}" "${INSTALL_PATH}"
 chmod +x "${INSTALL_PATH}"
