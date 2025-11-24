@@ -72,7 +72,14 @@ CHAIN_CONFIGS = {
         "remote": "https://avalanche.therpc.io",
         "is_hex": True,
         "jsonrpc_body": {"jsonrpc": "2.0", "id": 1, "method": "eth_blockNumber", "params": []},
+    },
+    "monad": {
+        "local": "http://127.0.0.1:8080",
+        "remote": "https://rpc-mainnet.monadinfra.com/",
+        "is_hex": True,
+        "jsonrpc_body": {"jsonrpc": "2.0", "id": 1, "method": "eth_blockNumber", "params": []},
     }
+
 }
 
 
