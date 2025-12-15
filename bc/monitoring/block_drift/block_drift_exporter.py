@@ -78,6 +78,12 @@ CHAIN_CONFIGS = {
         "remote": "https://rpc-mainnet.monadinfra.com/",
         "is_hex": True,
         "jsonrpc_body": {"jsonrpc": "2.0", "id": 1, "method": "eth_blockNumber", "params": []},
+    },
+    "katana": {
+        "local": "http://127.0.0.1:8545",
+        "remote": "https://rpc.katana.network",
+        "is_hex": True,
+        "jsonrpc_body": {"jsonrpc": "2.0", "id": 1, "method": "eth_blockNumber", "params": []},
     }
 
 }
